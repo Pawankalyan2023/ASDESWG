@@ -6,6 +6,13 @@
 import type {Config} from 'jest';
 
 const config: Config = {
+  preset: 'ts-jest', // Use ts-jest to handle TypeScript
+  testEnvironment: 'node', // Specify Node.js environment for Jest
+  transform: {
+      '^.+\\.tsx?$': 'ts-jest', // Transform .ts and .tsx files with ts-jest
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'], // File extensions Jest should recognize
+  transformIgnorePatterns: ['/node_modules/'], // Ignore transformations in node_modules
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
